@@ -97,6 +97,13 @@ while True:
             fileidx = filename.find(".")
             fileext = filename[fileidx:]
             sbfl.append(fileext)
+            sfm = filename.rfind("\\")
+            sfm = filename[sfm:]
+            sfm = sfm.strip("\\")
+            sfm2 = sfm.rfind(".")
+            sfm = sfm[:sfm2]
+            sbfl.append(sfm)
+            print(sfm)
             print(fileext)
             print(type(sbfl))
             sbfl = pickle.dumps(sbfl,protocol=5)

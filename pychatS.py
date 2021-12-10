@@ -102,9 +102,9 @@ def recdata(sock,addr):
                 clistnn = clistnn + 1
 
             elif rv[0] == "/filesend":
-                with open(f"sample{rv[2]}", mode="ab") as f:
+                with open(f"{rv[3]}{rv[2]}", mode="ab") as f:
                     f.write(rv[1])
-                print("filereceive")
+                print(f"The file you received is [{rv[3]}{rv[2]}]")
             else:#通常メッセージ対応
                 #ユーザー名(clistn)とIPアドレス(clist)の紐付け
                 for i,v in enumerate(clistn):
